@@ -1,0 +1,41 @@
+<div matDialogTitle>
+  <h1 >User Form</h1>
+</div>
+
+<form [formGroup]="userform" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content>
+  <div *ngIf="false">
+    <mat-form-field >
+      <mat-label>id</mat-label>
+      <input matInput placeholder="No" formControlName="id" >
+    </mat-form-field></div>
+  <div>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Ex. user user" formControlName="name">
+    </mat-form-field></div>
+    <div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Ex. test@gmail.com" formControlName="email">
+      </mat-form-field></div>
+      <div>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Ex. ********" formControlName="password">
+        </mat-form-field></div>
+        <div>
+          <mat-radio-group aria-label="Select an option" formControlName="role">
+            <mat-radio-button value="Doctor">Doctor</mat-radio-button>
+            <mat-radio-button value="Infirmiere">Infirmiere</mat-radio-button>
+            <mat-radio-button value="Employer">Employer</mat-radio-button>
+          </mat-radio-group>
+</div>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data? 'Edit' : 'Add'}}</button>
+    
+</div>
+</form>
